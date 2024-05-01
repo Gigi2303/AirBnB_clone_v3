@@ -67,6 +67,10 @@ test_file_storage.py'])
             self.assertTrue(len(func[1].__doc__) >= 1,
                             "{:s} method needs a docstring".format(func[0]))
 
+    def test_file_storage_count(self):
+        """Test FileStorage count method"""
+        num_states = models.storage.count(State)
+        self.assertEqual(num_states, 50)  # Assuming there are 50 states in the storage
 
 class TestFileStorage(unittest.TestCase):
     """Test the FileStorage class"""
